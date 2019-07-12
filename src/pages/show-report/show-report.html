@@ -1,0 +1,108 @@
+
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>showreport</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <head>
+      <style>
+          table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+          </style>
+  </head>
+  <ion-content padding >
+  <div id="contentToConvert">
+  <div *ngFor= "let item of Medicine_List">
+          <table>
+              <tr>  
+                  <th  text-center>MedicineName</th> 
+                  <th  text-center>Expected Times To Be Taken</th>  
+                  <th  text-center>Actual Times Taken</th> 
+                  <th  text-center>Quantity Remain</th>  
+              </tr>  
+              <tr> 
+                  <td  text-center>  {{item.medicine_name}} </td>  
+                  <td  text-center>  {{item.expected}}      </td>  
+                  <td  text-center>  {{item.actual}}        </td>
+                  <td  text-center>  {{item.medicine_quantity}}    </td>
+              </tr>  
+          </table>          
+      
+    </div>  
+  </div>
+
+  <button ion-button round full color="danger" (click)="Print(Medicine_List)">تحميل الملف</button>
+  </ion-content>
+  <!--<ion-list *ngIf = "item.medicine_category !=0" >  
+  <ion-list *ngIf = "item.medicine_date != dateNow " >
+    <ion-card-title >  
+      <h2  text-center    *ngIf = "item.medicine_date != dateNow " >    {{item.}}اسم الدوا </h2>
+      <ion-card-content  *ngIf = "item.medicine_date != dateNow "> 
+        <h3   text-center> {{item.medicine_date}}   تاريخ البدء فى الدوا</h3>
+        <br>
+        <h3   text-center   *ngIf= "item.medicine_date != dateNow ">   تقرير لحد اخر الامس </h3>
+        <br>
+        <h3   text-center   *ngIf = "item.medicine_date != dateNow ">      مواعيد الدوا  </h3>
+        <br>
+        <h3   text-center   *ngIf = "item.medicine_date != dateNow ">  {{item.medicine_time[0]}}      </h3>
+        <br>
+        <h3   text-center  *ngIf = "item.medicine_date != dateNow " >  {{item.medicine_time[1]}}     </h3>
+        <br>
+        <h3   text-center   *ngIf = "item.medicine_date != dateNow ">  {{item.medicine_time[2]}}      </h3>
+        <br>
+        <h3   text-center  *ngIf = "item.medicine_date != dateNow ">  {{item.medicine_time[3]}}      </h3>
+        <br>
+        <h3   text-center *ngIf = "item.medicine_date != dateNow "> {{item.expected}}  عدد مرات المفروض اخذها الوالد </h3>
+        <br>
+        <h3   text-center *ngIf = "item.medicine_date != dateNow "> {{item.actual}}    عدد المرات اللى اخذها بالفعل </h3>
+      </ion-card-content>
+    </ion-card-title>
+  </ion-list>
+  </ion-list>
+  <ion-list id="one"  *ngIf = "item.medicine_category == 0">
+      <ion-card-title >  
+          <h2  text-center >  {{item.medicine_name}}اسم الدوا </h2>
+          <ion-card-content> 
+            <h3   text-center> {{item.medicine__date[0]}} تاريخ اول معاد </h3>
+            <br>
+            <h3   text-center> {{item.medicine__date[1]}} تاريخ تاني معاد </h3>
+            <br>
+            <h3   text-center> {{item.medicine__date[2]}} تاريخ تالت معاد </h3>
+            <br>
+            <h3   text-center> {{item.medicine__date[3]}} تاريخ رابع معاد </h3>
+            <br>
+            <h3   text-center >      مواعيد الدوا  </h3>
+            <br>
+            <h3   text-center >  {{item.medicine_time[0]}}      </h3>
+            <br>
+            <h3   text-center >  {{item.medicine_time[1]}}     </h3>
+            <br>
+            <h3   text-center >  {{item.medicine_time[2]}}      </h3>
+            <br>
+            <h3   text-center >  {{item.medicine_time[3]}}      </h3>
+            <br>
+            <h3   text-center> {{item.expected}}  عدد مرات المفروض اخذها الوالد </h3>
+            <br>
+            <h3   text-center> {{item.actual}}    عدد المرات اللى اخذها بالفعل </h3>
+          </ion-card-content>
+        </ion-card-title>
+  </ion-list>
+  </div>-->
+  
+  

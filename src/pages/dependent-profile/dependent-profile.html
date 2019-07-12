@@ -1,0 +1,44 @@
+
+<ion-header>
+
+    <ion-navbar color="darkBlue">
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>الصفحة الشخصية</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <ion-content>
+      
+      
+      <div *ngFor="let item of elderList">
+        <div *ngIf="ElderID==item.$key">
+        <p *ngIf="ElderID==item.$key"> اسم التابع لي : {{item.Name}}</p>
+        <button ion-button round outline color="danger" *ngIf="ElderID==item.$key" (click)= "ShowElderData(ElderID)">بيانات ابويا</button>
+        <button ion-button round outline color="danger" *ngIf="ElderID==item.$key" (click)= "EditDepPass(DependentID)">تعديل رقمي السري</button>
+        <button ion-button round outline color="danger" *ngIf="item.Zahymar=='نعم لديه'" (click)= "ShowElderMedicineZahymar(ElderID)">عرض ادوية والدى </button>
+        <button ion-button round outline color="danger" *ngIf="item.Zahymar=='ليس لديه'" (click)= "ShowElderMedicineNotZahymar(ElderID)">عرض ادوية والدى </button>
+        <button ion-button round outline color="danger" *ngIf="item.Zahymar=='نعم لديه'" (click)= "AddElderMedicineZahymar(ElderID)">لادخال مواعيد الادوية الخاصة بك </button>
+        
+        <button ion-button round outline color="danger" *ngIf="ElderID==item.$key" (click)= "ShowReport(ElderID)">تقرير الادوية</button>
+        
+               {{Zhaymar}}
+
+               <button type="submit" class="btn btn-success btn-block" ion-button 
+               *ngIf="item.Zahymar=='نعم لديه'" (click)= "addRememberInfo(ElderID)">
+            أضافة معلومات عن الشخص الذي انت تابع له
+          </button>
+               </div>
+      </div>
+     
+      
+  </ion-content>  

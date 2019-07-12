@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+  
+ </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  
+    <ion-card>
+        <ion-card-header>
+          تسجيل المعلومات الشخصية
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list no-lines>
+            <ion-item>
+                <ion-label>الاسم</ion-label>
+                <ion-input type="text" [(ngModel)]="doctor.Name"></ion-input>
+            </ion-item>
+         
+              <ion-input type="hidden" [(ngModel)]="doctor.email" value="{{email}}" ></ion-input>
+        
+            <ion-item>
+                <ion-label>التخصص</ion-label>
+                <ion-input type="text" [(ngModel)]="doctor.Specialty"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>رقم الموبايل</ion-label>
+                <ion-input type="tel" [(ngModel)]="doctor.PhoneNumber"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="hidden" [(ngModel)]="doctor.type" value ="nope"></ion-input>
+              {{doctor.type}}
+          </ion-item>
+            <ion-item>
+              <button ion-button color="danger" shape="round" fill="outline" (click)="getProfilePic(0)">اختيار صورة شخصية</button>
+              <img [src]="captureDataUrl" *ngIf="captureDataUrl"/>
+          </ion-item>
+
+          <ion-item>
+            <button ion-button color="danger" shape="round" fill="outline" (click)="getRequestPic(0)">شهادة التخرج</button>
+            <img [src]="captureDataUrlDoc" *ngIf="captureDataUrlDoc"/>
+        </ion-item>
+
+            <button ion-button clear full color="light" (click)= "saveDoctorData()" 
+            *ngIf="doctor.Name&&doctor.Specialty&&doctor.PhoneNumber&&captureDataUrl&&captureDataUrlDoc">
+              <ion-icon name="md-checkmark-circle"></ion-icon>
+              تم التسجيل 
+            </button>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
+

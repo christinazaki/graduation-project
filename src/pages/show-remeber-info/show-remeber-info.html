@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ShowRemeberInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+      <ion-title>لمعرفة المزيد</ion-title>
+      <ion-buttons left>
+          <button ion-button icon-only (click)="back()">
+            <ion-icon color="light" name="arrow-back"></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content padding>
+    <p class="note"> هوايات  : {{(elderData | async)?.Hopes}}</p>
+
+    <hr>
+    <p class="note"> عائلة : {{(elderData | async)?.Family}}</p>
+    
+    
+    <hr>
+    <p class="note"> وظائف : {{(elderData | async)?.PreviousJops}}</p>
+    
+    <hr>
+    <p class="note"> المزيد : {{(elderData | async)?.Notes}}</p>
+    
+    
+</ion-content>

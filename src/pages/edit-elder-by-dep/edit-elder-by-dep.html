@@ -1,0 +1,70 @@
+<ion-header>
+
+  <ion-toolbar>
+    
+    <ion-title>تعديل بيانات الشخص التابع له</ion-title>
+    
+ </ion-toolbar>
+
+</ion-header>
+
+  <ion-content padding>
+    <ion-item>
+      <ion-label floating>الاسم</ion-label>
+      <ion-input type="text" [(ngModel)]="elderly.Name" placeholder="{{(elderData | async)?.Name}}"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-label floating>العمر</ion-label>
+      <ion-input type="text"[(ngModel)]="elderly.Age" placeholder="{{(elderData | async)?.Age}}"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-label floating>رقم الموبايل</ion-label>
+      <ion-input type="text"[(ngModel)]="elderly.PhoneNumber" placeholder="{{(elderData | async)?.PhoneNumber}}"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-label floating>العنوان</ion-label>
+      <ion-input type="text"[(ngModel)]="elderly.Address" placeholder="{{(elderData | async)?.Address}}"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-label floating>الديانة</ion-label>
+      <ion-input type="text"[(ngModel)]="elderly.Religion" placeholder="{{(elderData | async)?.Religion}}"></ion-input>
+    </ion-item>
+  
+  
+  
+    <ion-list no-lines radio-group [(ngModel)]="elderly.Zahymar">
+                  
+        <h1 style="color:azure">
+            الوالد او الوالدة:
+        </h1>
+    <ion-item>
+      <ion-label>لديه زهايمر</ion-label>
+      <ion-radio slot="start" value="نعم لديه" checked></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>ليس لديه زهايمر</ion-label>
+      <ion-radio slot="start" value="ليس لديه" checked></ion-radio>
+    </ion-item>
+  </ion-list>
+  
+    
+    
+  
+     <!-- <ion-item>
+      <ion-label floating>ايميل الشخصي للتابع الخاص بك</ion-label>
+      <ion-input type="text"[(ngModel)]="elderly.DependentEmail"></ion-input>
+     </ion-item> -->
+  
+     <br>
+      <div class="center">
+      <button outline round ion-button icon-start 
+      (click)= "editElderData(ElderID)"  *ngIf="elderly.Name&&elderly.Age&&elderly.PhoneNumber&&elderly.Religion&&elderly.Address&&elderly.Zahymar">
+        <ion-icon name="md-checkmark-circle"></ion-icon>
+        تم التعديل
+      </button>
+    </div>
+  </ion-content>
+  
+  
+  

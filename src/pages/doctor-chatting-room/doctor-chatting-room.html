@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>كل المحادثات</ion-title>
+    <ion-buttons left>
+        <button ion-button icon-only (click)="back()">
+          <ion-icon color="light" name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!--De bygeb kol l Rooms w ay user y2dr y3ml Join 3aleha-->
+  <ion-list >
+      <ion-input type="hidden" [(ngModel)]="name" value="{{(drData | async)?.Name}}"></ion-input>
+
+    <ion-item *ngFor="let room of docrooms" class="ion-content">
+          {{room.docroomname}}
+          <ion-icon name="chatbubbles" color="ihole" item-end (click)="joinRoom(room.$key)"></ion-icon>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
+
+<ion-footer>
+    <button ion-button color="secondary" full (click)="addRoom()">
+        <ion-icon name="add-circle-outline"></ion-icon> ....يمكنك عمل محادثة بأسمك/ي....
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </button>
+</ion-footer>
+
+

@@ -1,0 +1,29 @@
+
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title  >عرض الادوية</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list >
+      <ion-item-sliding *ngFor= "let item of elderList" >
+      
+        <ion-item>
+          <h1  item-content>{{item.medicine_name}}</h1>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button  (click)="showDetails(item.$key)">   تفاصيل
+            <ion-icon name="menu"></ion-icon>  
+              
+          </button>
+        </ion-item-options>
+        
+      
+      </ion-item-sliding>
+  </ion-list>
+</ion-content>

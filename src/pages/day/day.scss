@@ -1,0 +1,21 @@
+page-day {
+    .toolbar-background {
+        background-image: linear-gradient(135deg, color($colors, dark), color($colors, light));
+      }
+    ion-content{
+        background-image:url('../assets/imgs/aya.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        direction: rtl;
+    }
+
+    .text1{
+        background-color: rgba(0,0,0,0.4);
+        .note{
+            color: white;
+            font-size: 40px;
+        }
+    }
+
+    
+}

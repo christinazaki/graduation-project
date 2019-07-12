@@ -1,0 +1,45 @@
+<!--
+  Generated template for the EditProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-title>تعديل البيانات الشخصية</ion-title>
+        
+      </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>يجب عليك اعادة ملئ كل البيانات عند تعديل احداهما</h2>
+  <ion-item>
+    <ion-label floating>الاسم</ion-label>
+    <ion-input type="text"[(ngModel)]="myElder.Name" placeholder="{{(elderData | async)?.Name}}"></ion-input>
+   </ion-item>
+   <ion-item>
+    <ion-label floating>العمر</ion-label>
+    <ion-input type="text"[(ngModel)]="myElder.Age" placeholder="{{(elderData | async)?.Age}}"></ion-input>
+   </ion-item>
+   <ion-item>
+    <ion-label floating>رقم الموبايل</ion-label>
+    <ion-input type="text"[(ngModel)]="myElder.PhoneNumber" placeholder="{{(elderData | async)?.PhoneNumber}}"></ion-input>
+   </ion-item>
+   <ion-item>
+    <ion-label floating>العنوان</ion-label>
+    <ion-input type="text"[(ngModel)]="myElder.Address" placeholder="{{(elderData | async)?.Address}}"></ion-input>
+   </ion-item>
+  
+
+   <br>
+    <div class="buttonDone">
+    <button outline round ion-button icon-start 
+    (click)= "editData(Name , Age , Address , PhoneNumber)" *ngIf="myElder.Name&&myElder.Age&&myElder.PhoneNumber&&myElder.Religion&&myElder.Address&&myElder.Zahymar">
+    تم التعديل
+      <ion-icon name="md-checkmark-circle"></ion-icon>
+      
+    </button>
+  </div>
+</ion-content>
+
+

@@ -1,0 +1,100 @@
+<ion-menu side="left" id="authenticated" [content]="content">
+
+  <ion-header style="background-color: black">
+    <ion-toolbar>
+        <ion-title style="color: white">القائمة الرئيسية</ion-title>
+    </ion-toolbar>
+      <ion-list class="user-list" style="background-color: black">
+          <ion-item menu-close *ngFor="let p of pages" (click)="openPage(p)" style="background-color: black; color: white">
+              <ion-icon item-left [name]="p.icon" color="white"></ion-icon>
+          <span ion-text style="color: white" style="font-size: 30px">{{p.title}}</span>
+            </ion-item>
+      </ion-list>
+  </ion-header>
+  <ion-content style="background-color: black">
+    
+  </ion-content>
+<ion-footer>
+  <ion-grid>
+      <ion-row no-padding class="other-data">
+        <ion-col no-padding class="column">
+          <button ion-button round outline center color="white" menuClose (click)="logout()" 
+          style="font-size: 30px">
+            تسجيل الخروج
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-footer>
+</ion-menu>
+
+
+<ion-header>
+    <ion-toolbar>
+          <ion-buttons>
+            <button ion-button menuToggle>
+                <ion-icon name="menu" color = "white"></ion-icon>
+            </button>
+          </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding  #content>
+    <div class="profile-image">
+        <img src= "{{(elderData | async)?.image}}">
+      </div>
+      <div>
+        <h1>الأسم:{{(elderData | async)?.Name}}</h1>
+      </div>
+      <div>
+          <h1>العمر : {{(elderData | async)?.Age}}</h1>
+      </div>
+      <div>
+          <h1>العنوان :  {{(elderData | async)?.Address}}</h1>
+      </div>
+      <div>
+          <h1>رقم الموبايل : {{(elderData | async)?.PhoneNumber}}</h1>
+      </div>
+      <div>
+          <h1>الديانة :  {{(elderData | async)?.Religion}}</h1>
+      </div>
+      <div>
+          <h2>الايميل الشخصي للتابع الخاص بي :  {{(dependentData | async)?.dependent_email}}</h2>
+      </div>
+      <div class="spacer" style="height: 10px;"></div>
+      <div>
+          <button ion-button round outline color="dark" (click) = "addDependent()">اضافة التابع</button>
+      
+          <button ion-button round outline color="dark" *ngIf="(elderData | async)?.Zahymar == 'ليس لديه'" (click) = "updateDepedent()">تعديل التابع لي</button>
+      </div>
+
+      <div>
+          <button ion-button round outline color="primary" *ngIf="(elderData | async)?.Zahymar == 'ليس لديه'" (click) = "addMedicine()">لادخال مواعيد الادوية الخاصة بك</button>
+        
+          <button ion-button round outline color="primary" *ngIf="(elderData | async)?.Zahymar == 'ليس لديه'" (click) = "showAllMedicines()">عرض أدويتي</button>
+      </div>
+      <div>
+          <button ion-button round outline color="danger" (click) = "addNotes()">لاَضافة مذكرات</button>
+        </div>
+      
+
+      
+      <div>
+          <button ion-button round outline color="danger"*ngIf="(elderData | async)?.Zahymar == 'نعم لديه'" (click) = "showRemeberInfo()">لمعرفة المزيد عنك</button>
+      </div>
+      <div>
+          <button ion-button round outline color="danger" (click) = "deleteAccount()">مسح الحساب الخاص بك</button>
+        </div>
+
+       
+        
+</ion-content>
+
+
+<!-- 
+<div>
+    <button ion-button round outline color="ihole" (click) = "askDoctor()">أسئل طبيبك!!</button>
+  
+    <button ion-button round outline color="ihole" (click) = "chatting()">قم بالمحادثة مع الأخرين</button>
+  </div> -->

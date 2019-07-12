@@ -1,0 +1,6 @@
+page-help {
+    direction: rtl;
+    .toolbar-background {
+        background-image: linear-gradient(135deg, color($colors, dark), color($colors, darkBlue));
+    }
+}

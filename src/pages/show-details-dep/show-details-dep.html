@@ -1,0 +1,83 @@
+
+
+<ion-header>
+
+    <ion-navbar  color="primary">
+      <ion-title>تفاصيل دوا </ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <h1 text-center > {{(medData| async)?.medicine_name}}</h1>
+  <br>
+    
+              <ion-card  >
+                  <ion-card-header>
+                   
+                    <ion-card-title >
+                        <h2  text-center >نوع الدوا</h2> 
+                      </ion-card-title>
+                  </ion-card-header>
+                
+                  <ion-card-content>
+                      <h3  text-center  *ngIf="(medData| async)?.medicine_type == 1">   برشام  </h3>
+                      <h3  text-center  *ngIf="(medData| async)?.medicine_type == 2">   شراب  </h3>
+                      <h3  text-center  *ngIf="(medData| async)?.medicine_type == 3">  حقن  </h3>
+                  </ion-card-content>
+                </ion-card>
+        
+        
+        
+      
+    
+              <ion-card>
+                  <ion-card-header>
+                   
+                    <ion-card-title> 
+                        <h2   text-center> كمية الدوا</h2> </ion-card-title>
+                  </ion-card-header>
+                
+                  <ion-card-content>
+                      <h3   text-center>  {{(medData| async)?.medicine_quantity}} </h3>
+                    <!--{{(mymedicine | async)?.Name}}-->  
+                  </ion-card-content>
+                </ion-card>
+           
+           
+                <ion-card *ngIf="(medData| async)?.medicine_type == 2">
+                    <ion-card-header>
+                     
+                      <ion-card-title> 
+                          <h2   text-center> حجم الدوا </h2> </ion-card-title>
+                    </ion-card-header>
+                  
+                    <ion-card-content>
+                        <h3   text-center> {{(medData| async)?.medicine_size}} </h3>
+                    </ion-card-content>
+                  </ion-card>
+    
+                <ion-card>
+                    <ion-card-header>
+                     
+                      <ion-card-title>
+                          <h2   text-center> مواعيد الدوا</h2>  </ion-card-title>
+                    </ion-card-header>
+                  
+                    <ion-card-content>
+                        <h3   text-center> {{(medData| async)?.medicine_time[0]}}</h3>
+                        
+                        <h3   text-center> {{(medData| async)?.medicine_time[1]}} </h3>
+                        
+                        <h3   text-center> {{(medData| async)?.medicine_time[2]}} </h3>
+                        
+                        <h3   text-center> {{(medData| async)?.medicine_time[3]}} </h3>
+  
+                    </ion-card-content>
+                  </ion-card>
+             
+             
+      
+  </ion-content>
+  

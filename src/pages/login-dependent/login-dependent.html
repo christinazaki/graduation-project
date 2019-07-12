@@ -1,0 +1,147 @@
+<!-- 
+
+<!--
+  Generated template for the LoginDependentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+
+<ion-header>
+    <ion-navbar>
+      <ion-title>LoginDependent</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+  
+  
+      <ion-list no-lines radio-group [(ngModel)]="Zhaimer">
+                  
+          <h1 style="color:azure">
+              الوالد او الوالدة:
+          </h1>
+      <ion-item>
+        <ion-label>لديه زهايمر</ion-label>
+        <ion-radio slot="start" value="yup" checked></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>ليس لديه زهايمر</ion-label>
+        <ion-radio slot="start" value="nope" checked></ion-radio>
+      </ion-item>
+    </ion-list>
+  
+  
+  
+    <div class="text">
+        <ion-item>
+            <ion-label floating>
+              الايميل الشخصي
+            </ion-label>
+             <ion-input type="text" [(ngModel)] = "emailDep"></ion-input>
+            <!-- <ion-input type="text" [(ngModel)]="myVal"></ion-input>
+            <button ion-button large full color="dark" (click)="refresh()">Refresh</button>
+            <ion-label color="dark">{{myVal1}}</ion-label>  
+          </ion-item>
+          <ion-item>
+              <ion-label floating>
+                الرقم السري
+              </ion-label>
+              <ion-input type="password" [(ngModel)] = "passDep"></ion-input>
+            </ion-item>
+  
+            
+            
+    </div>
+    
+      
+      <br>
+      <div *ngFor="let item of dependentList">
+      <button ion-button *ngIf="emailDep==item.dependent_email&&passDep==item.Password " (click)= "LoginDependent(item.Elder_Id)">
+        
+        <ion-icon name="md-checkmark-circle"></ion-icon>
+  
+        دخول
+      </button>
+      <p *ngIf="emailDep==item.dependent_email&&passDep!=item.Password"> بقولك ايه.. الايميل او الرقم السري غلط , ممكن تركز و تجرب تاني! :D</p>
+    </div>
+  
+  </ion-content>
+  
+  
+   -->
+
+   <ion-header>
+     <ion-toolbar>
+        <ion-buttons left>
+            <button navPop ion-button icon-only>
+              <ion-icon color="light" name="arrow-back"></ion-icon>
+            </button>
+          </ion-buttons>
+     </ion-toolbar>
+    </ion-header>
+
+   
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    
+    <ion-content class="bg">
+      <div class="container-fluid ">
+        <div class="row">
+          <div class="col-md-4 col-sm4 col-xs-12"></div>
+          <div class="col-md-4 col-sm4 col-xs-12">
+            <!--Form here-->
+            <form class="form-container">
+                <div class="form-group">
+                  <label>الايميل الشخصي</label>
+                  <input  [(ngModel)] = "emailDep" name="email" type="email" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>الرقم السري</label>
+                  <input  [(ngModel)] = "passDep"  name="pass" type="password" class="form-control">
+                </div>
+                
+                <div *ngFor="let item of dependentList">
+                    <div>
+                        <ion-list no-lines radio-group *ngIf="emailDep==item.dependent_email&&passDep==item.Password&&!item.Zahymar" [(ngModel)]="Zahymar" [ngModelOptions]="{standalone : true}">
+                      
+                            <h3 style="color:azure">
+                                هل والدك/تك يعانون من ؟؟
+                            </h3>
+                        <ion-item style="background-color: teal">
+                          <ion-label>لديه زهايمر</ion-label>
+                          <ion-radio slot="start" value="نعم لديه" checked></ion-radio>
+                        </ion-item>
+                      
+                        <ion-item style="background-color: teal">
+                          <ion-label>ليس لديه زهايمر</ion-label>
+                          <ion-radio slot="start" value="ليس لديه" checked></ion-radio>
+                        </ion-item>
+                      </ion-list>
+                    </div>
+                  <!-- <p>{{item.dependent_email}}</p>
+                  <p>{{item.Password}}</p>
+                  <p>{{item.$key}}</p> -->
+                    <button type="submit" class="btn btn-success btn-block" ion-button *ngIf="emailDep==item.dependent_email&&passDep==item.Password " (click)= "LoginDependent(item.$key)">
+                      
+                      <ion-icon name="md-checkmark-circle"></ion-icon>
+                
+                      دخول
+                    </button>
+                    <p *ngIf="emailDep==item.dependent_email&&passDep!=item.Password" style="color: tomato">  الايميل او الرقم السري غلط! :D</p>
+                  </div>
+                
+                 </form>
+    
+          </div>
+          <div class="col-md-4 col-sm4 col-xs-12"></div>
+        </div>
+      </div>
+    </ion-content>

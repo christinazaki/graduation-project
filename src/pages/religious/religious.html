@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="back()">
+              <ion-icon color="light" name="arrow-back"></ion-icon>
+            </button>
+          </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content padding>
+    <ion-grid *ngFor="let item of dataList">
+      <button *ngIf="(elderData | async)?.Religion=='مسلم'" ion-button round outline color="darkBlue"  (click)="Day(item.$key)"> 
+        {{item.$key}} </button>
+
+      <button *ngIf="(elderData | async)?.Religion=='مسيحي'" ion-button round outline color="darkBlue" (click)="DayCh(item.$key)">
+        {{item.$key}}  </button>
+    </ion-grid>
+  </ion-content>

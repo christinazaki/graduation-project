@@ -1,0 +1,88 @@
+page-welcome{
+    ion-content{
+        background-image:url('../assets/imgs/elderlyImage.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: #1d5063 !important;
+        direction: rtl;
+    }
+}
+
+.elderButt{
+    float: right;
+}
+.depButt{
+    float: left;
+}
+
+.docButt{
+  align-content: center;
+  text-align: center;
+}
+ .elderButt .elderBut{
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    background-color: teal;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+  .elderButt .elderBut:hover {background-color: steelblue}
+  
+  .elderButt .elderBut:active {
+    background-color: teal;
+    box-shadow: 0 5px steelblue;
+    transform: translateY(4px);
+  } 
+  
+
+  .depButt .depBut{
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    background-color: teal;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+  .depButt .depBut:hover {background-color: steelblue}
+  
+  .depButt .depBut:active {
+    background-color: teal;
+    box-shadow: 0 5px steelblue;
+    transform: translateY(4px);
+  } 
+  
+
+
+
+.docButt .docBut{
+  font-size: 17px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: #718DBB;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.docButt .docBut:hover {background-color: #4369A6}
+
+.docButt .docBut:active {
+  background-color: #718DBB;
+  box-shadow: 0 5px #4369A6;
+  transform: translateY(4px);
+} 
+

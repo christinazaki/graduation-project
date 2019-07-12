@@ -1,0 +1,64 @@
+
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+    
+  </ion-header>
+  
+<ion-content padding>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <div class="profile-image">
+      <img src= "{{(doctorData | async)?.image}}">
+    </div>
+  <div>
+    <h2>الأسم:{{(doctorData | async)?.Name}}</h2>
+  </div>
+  <div>
+      <h2>رقم الموبايل : {{(doctorData | async)?.PhoneNumber}}</h2>
+  </div>
+  <div>
+      <h2>التخصص : {{(doctorData | async)?.Specialty}}</h2>
+  </div>
+  <div class="spacer" style="height: 10px;"></div>
+  <div>
+    <button ion-button round outline color="secondary" (click) = "answerElderQuestions()">للرد علي أسئلة كبار السن</button>
+  </div>
+
+  <div>
+    <button ion-button round outline color="danger" (click) = "editDoctorData()">تعديل البيانات</button>
+  </div>
+  <div>
+    <button ion-button round outline color="danger" (click) = "deleteAccount()">مسح الحساب الخاص بك</button>
+  </div>
+  <div>
+    <button ion-button round outline color="danger" (click) = "logout()">تسجيل الخروج</button>
+  </div>
+  
+
+
+
+<!-- 
+  <div class="textname">
+        <p class="note">الأسم : {{(doctorData | async)?.Name}}</p>
+  </div>
+  
+  <hr>
+  <div class="textname">
+    <p class="note">التخصص  : {{(doctorData | async)?.Specialty}}</p>
+</div>
+
+<hr>
+  
+  
+  <div class="textmob">
+      <p class="note">رقم الموبايل :  {{(doctorData | async)?.PhoneNumber}}</p>
+  </div>
+  
+ 
+  <hr>
+   -->
+    
+</ion-content>
+
+

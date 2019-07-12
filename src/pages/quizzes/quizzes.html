@@ -1,0 +1,52 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="back()">
+        <ion-icon color="light" name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<head>
+    <style>
+        table {
+          margin-top: 50px;
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          
+          border: 1px;
+          text-align: center;
+          padding: 8px;
+        }
+        </style>
+</head>
+<ion-content>
+  <h2 style="color: #fff">قم باختيار نوع الأسئلة</h2>
+
+  <table>
+      <tr>
+        <th><button ion-button round  color="secondary"  
+          (click) = "generalQuestions()">اسئله ثقافه عامة</button></th>
+        
+      </tr>
+      <tr>
+        <td><button ion-button round  color="babyBlue" 
+          (click) = "healthAndScienceQuestions()"> اسئله عن الصحه والعلوم</button></td>
+      </tr>
+      <tr>
+        <td><button ion-button round  color="danger" 
+          (click) = "mixQuestions()">منوعات</button></td>
+        
+      </tr>
+      <tr>
+          <td><button ion-button round  color="labny"  
+            (click) = "whoWhereWhatQuestions()">من - أين - ماهو</button></td>
+      </tr>
+  </table>
+</ion-content>

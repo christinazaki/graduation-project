@@ -1,0 +1,51 @@
+<!--
+  Generated template for the AddRememberInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+      <ion-title>اضافة معلومات عن الشخص التابع له</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p>اكتب المعلومات</p>
+  <ion-item>
+    <ion-label>هوايات</ion-label>
+    <!-- <ion-input type="text" [(ngModel)]="info.Hopes"></ion-input> -->
+    <ion-textarea style="height: 250px;" placeholder="معلومات عن هواياته"
+                 [(ngModel)] = "info.Hopes"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>عائلي</ion-label>
+    <!-- <ion-input type="text" [(ngModel)]="info.Family"></ion-input> -->
+    <ion-textarea style="height: 250px;" placeholder="معلومات عن عائلته"
+                 [(ngModel)] = "info.Family"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>وظائف</ion-label>
+    <!-- <ion-input type="text" [(ngModel)]="info.PreviousJops"></ion-input> -->
+    <ion-textarea style="height: 250px;" placeholder="معلومات عن وظائفه السابقة"
+                 [(ngModel)] = "info.PreviousJops"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>المزيد</ion-label>
+    <!-- <ion-input type="text" [(ngModel)]="info.Notes"></ion-input> -->
+    <ion-textarea style="height: 250px;" placeholder="معلومات أخري"
+                 [(ngModel)] = "info.Notes"></ion-textarea>
+  </ion-item>
+
+
+  
+
+</ion-content>
+<ion-footer>
+    <button type="submit" class="btn btn-success btn-block" ion-button (click)= "add()">
+        تسجيل   
+    </button>
+</ion-footer>

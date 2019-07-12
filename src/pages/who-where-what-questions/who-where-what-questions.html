@@ -1,0 +1,36 @@
+<script src="node_modules/jquery/dist/jquery.js"></script>
+
+<ion-header>
+  <ion-toolbar>
+     
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <div class="cardQuiz" *ngFor="let question of Questions">
+        
+        <div *ngIf="question.$key==variable">  
+            <h2>{{question.Question}}</h2>
+            <button ion-button color="secondary" block class="title" (click)="toggle1(question,question.Option1.Correct,question.Answer)">{{question.Option1.Name}}</button>
+                <br>
+            <button ion-button color="secondary" block (click)="toggle2(question,question.Option2.Correct,question.Answer)">{{question.Option2.Name}}</button>
+                 <br>
+            <button ion-button color="secondary" block (click)="toggle3(question,question.Option3.Correct,question.Answer)">{{question.Option3.Name}}</button>
+                <br>  
+        </div>
+        
+    </div>
+
+<div class="nextButt">
+    <button round ion-button color="dark" (click)= "next()">            
+         التالي
+      </button>
+</div>
+<div class="finishButt">
+      <button round ion-button color="danger" (click)= "finish()">            
+     للرجوع 
+      </button>
+</div>
+    
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-toolbar>
+  
+</ion-toolbar>
+<ion-content padding>
+    <ion-item>
+        <ion-input placeholder='اسم الدواء' type="text" [(ngModel)]="mymedicine.MedicineName" ngDefaultControl></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-input placeholder='الكمية المتاحة' type="number"  [(ngModel)]="mymedicine.MedicineQuantity"  min="1" max="1000" ngDefaultControl></ion-input>
+      </ion-item>
+      <ion-row radio-group   [(ngModel)]="mymedicine.MedicineType" ngDefaultControl>     
+        <ion-col>
+          <ion-item>
+            <ion-label>برشام</ion-label>
+            <ion-radio   value="1" (ionSelect)="focus(1)"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+           <ion-label>شراب</ion-label>
+            <ion-radio    value="2" (ionSelect) ="focus(2)"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+              <ion-label>حقن</ion-label>
+              <ion-radio value="3" (ionSelect)="focus(3)"
+             ></ion-radio>
+            </ion-item>
+          </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-input  placeholder='حجم الازازه' type="text"  disabled="{{isDisabled}}" [(ngModel)]="mymedicine.MedicineSize"[(ngModel)]="mymedicine.MedicineSize2" ngDefaultControl></ion-input>
+      </ion-item>
+    
+    <ion-item>
+        <ion-datetime placeholder='التاريخ' displayFormat="  DD/MM/YY" pickerFormat="D MMMM YYYY" min="2019" max="2040"  [(ngModel)]="date" ngDefaultControl></ion-datetime>
+      </ion-item>
+      <ion-item>
+              <ion-datetime placeholder='الوقت'  displayFormat="HH:mm" pickerFormat="HH:mm  "  [(ngModel)]="time" ngDefaultControl></ion-datetime>
+            </ion-item>
+            <button ion-button color="light"  (click)="Save_schedule()">Add</button>
+            <button ion-button color="light"  (click)="notify()">finish</button>
+          
+          
+</ion-content>

@@ -1,0 +1,33 @@
+page-elder-app {
+    .toolbar-background {
+        background-image: linear-gradient(135deg, color($colors, dark), color($colors, darkBlue));
+      }
+    ion-content{
+        background-image: url('../assets/imgs/elderCare.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-top: 45px;
+        background-color: #ffffff !important;
+        direction: rtl;
+        
+    }
+    *{
+        font-size: 20px;
+    }
+}
+
+.one .button{
+    border-radius: 25px;
+    
+}
+
+.two .button{
+    border-radius: 25px;
+    
+}
+.one{
+    float: left;
+}
+.two{
+    float: right;
+}

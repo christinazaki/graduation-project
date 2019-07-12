@@ -1,0 +1,36 @@
+page-general-questions {
+    direction: rtl;
+    .toolbar-background {
+        background-image: linear-gradient(135deg, color($colors, dark), color($colors, darkBlue));
+      }
+    ion-content{
+        background-image:url('../assets/imgs/Quiz(black).png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        //font-size: 30px;
+    }
+    *{
+        font-size: 40px;
+    }
+}
+.cardQuiz{
+    margin-top: 80px;
+    box-shadow: salmon;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+
+}
+.cardQuiz h2{
+    color: honeydew;
+    padding-right: 10px;
+}
+.cardQuiz button{
+    border-radius: 30px;
+}
+.nextButt{
+    float: left;
+}
+.finishButt{
+    float: right;
+    
+}

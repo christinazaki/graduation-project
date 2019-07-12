@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>تسجيل الدخول</ion-title>
+      <ion-buttons left>
+          <button navPop ion-button icon-only>
+            <ion-icon color="light" name="arrow-back"></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<ion-content class="bg">
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+      <div class="col-md-4 col-sm4 col-xs-12">
+        <!--Form here-->
+        <form class="form-container" [formGroup]="validations_form">
+            <div class="form-group">
+              <label>الايميل الشخصي</label>
+              <input type="email" class="form-control" formControlName="email" name="email"   [(ngModel)] = "elderly.email">
+            </div>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.email">
+                  <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            <div class="form-group">
+              <label>الرقم السري</label>
+              <input type="password" class="form-control" formControlName="password" name="pass"  [(ngModel)] = "elderly.Password">
+            </div>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.password">
+                  <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            
+              <button type="submit" [disabled]="!validations_form.valid" class="btn btn-success btn-block" (click)= "Login(elderly)">دخول</button>
+              <label class="error-message">{{errorMessage}}</label>
+            </form>
+
+      </div>
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+    </div>
+  </div>
+</ion-content>
+
+
+<!-- <ion-content class="background">
+  <ion-card>
+    <ion-card-header>
+      تسجيل الدخول
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item>
+          <ion-input type="text" placeholder="قم بادخال الايميل الشخصي" [(ngModel)] = "elderly.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="قم بادخال الرقم السري" [(ngModel)] = "elderly.Password"></ion-input>
+        </ion-item>
+        <button ion-button clear full color="light" (click)= "Login(elderly)">دخول  
+          <ion-icon name="md-checkmark-circle"></ion-icon>
+        </button>
+        <button ion-button clear full color="light" (click)= "loginAction()">facebook
+          </button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content> -->
+
+
+
+<!--------------------------------------------------------------------------------------------> 
+  <!-- <div class="text">
+      <ion-item>
+          <ion-label floating>
+            الايميل الشخصي
+          </ion-label>
+          <ion-input type="text" [(ngModel)] = "elderly.email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>
+              الرقم السري
+            </ion-label>
+            <ion-input type="password" [(ngModel)] = "elderly.Password"></ion-input>
+          </ion-item>
+  </div>
+  
+
+    
+    <br>
+    <div class="center">
+    <button outline round ion-button icon-start (click)= "Login(elderly)">
+      <ion-icon name="md-checkmark-circle"></ion-icon>
+      دخول
+    </button>
+  </div>
+ -->
+

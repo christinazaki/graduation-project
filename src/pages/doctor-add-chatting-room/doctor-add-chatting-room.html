@@ -1,0 +1,41 @@
+
+<ion-header>
+    <ion-toolbar>
+      <ion-title>لعمل محادثة للرد علي كبار السن</ion-title>
+      <ion-buttons left>
+          <button ion-button icon-only (click)="back()">
+            <ion-icon color="light" name="arrow-back"></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-toolbar>
+  </ion-header>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<ion-content class="bg">
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+      <div class="col-md-4 col-sm4 col-xs-12">
+        <!--Form here-->
+        <form class="form-container" (ngSubmit)="addRoom()">
+            <div class="form-group">
+              <label>قم بادخال اسم للمحادثة</label>
+              <input type="text" class="form-control" name="nickname" required  [(ngModel)] = "data.docroomname">
+            </div>
+            <button type="submit" class="btn btn-success btn-block" *ngIf="data.docroomname" >تم</button>
+          </form>
+
+      </div>
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+    </div>
+  </div>
+</ion-content>

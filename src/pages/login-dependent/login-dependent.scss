@@ -1,0 +1,27 @@
+page-login-dependent {
+    .toolbar-background {
+        background-image: linear-gradient(135deg, color($colors, dark), color($colors, darkBlue));
+      }
+    ion-content{
+        direction: rtl;
+    }
+    *{
+        color: #ffffff;
+        font-size: 20px;
+    }
+    .bg{
+        background: url('../assets/imgs/dependent.png');
+        background-repeat: no-repeat;
+        background-size: 100% 55%;
+        background-color: #1f93b8;
+    }
+    .form-container{
+        border-radius: 30px;
+        padding: 40px 40px;
+        margin-top: 45vh;
+        background-color: rgba(0,0,0,0.4);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    }
+}

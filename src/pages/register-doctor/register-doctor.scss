@@ -1,0 +1,33 @@
+page-register-doctor {
+    .toolbar-background {
+        background-image: linear-gradient(135deg, color($colors, dark), color($colors, darkBlue));
+      }
+
+      ion-content{
+        direction: rtl;
+    }
+    *{
+        color: #ffffff;
+        font-size: 23px;
+    }
+    
+        .bg{
+            margin-top: 30px;
+            background: url('../assets/imgs/doctor.png');
+            background-repeat: no-repeat;
+            background-size: 100% 55%;
+            background-color: #ffffff;
+        }
+        .form-container{
+            border-radius: 30px;
+            padding: 30px 40px;
+            margin-top: 43vh;
+            background-color: rgba(0,0,0,0.9);
+    
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+             box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        }
+
+     
+}

@@ -1,0 +1,161 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background">
+
+  <ion-card>
+    <ion-card-header>
+      تسجيل المعلومات الشخصية
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-lines>
+
+        <ion-item>
+          <ion-label>الاسم</ion-label>
+          <ion-input type="text" [(ngModel)]="elderly.Name" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>العمر</ion-label>
+          <ion-input type="number" min="45" max="90" [(ngModel)]="elderly.Age"></ion-input>
+
+        </ion-item>
+        <ion-label *ngIf="elderly.Age>90" style="color: tomato">لازم العمر يكون من 45 الي 90</ion-label>
+        <ion-label *ngIf="!elderly.Age > 45" style="color: tomato">لازم العمر يكون من 45 الي 90</ion-label>
+
+        <ion-item>
+          <ion-label>رقم الموبايل</ion-label>
+          <ion-input type="mobile" [(ngModel)]="elderly.PhoneNumber"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>العنوان</ion-label>
+          <ion-input type="text" [(ngModel)]="elderly.Address"></ion-input>
+        </ion-item>
+
+
+        <ion-list no-lines radio-group [(ngModel)]="elderly.Religion">
+
+          <h1 style="color:azure">
+            الديانة
+          </h1>
+
+          <ion-item>
+            <ion-label>مسلم</ion-label>
+            <ion-radio slot="start" value="مسلم" checked></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>مسيحي</ion-label>
+            <ion-radio slot="start" value="مسيحي" checked></ion-radio>
+          </ion-item>
+        </ion-list>
+
+        <ion-item>
+          <button ion-button color="danger" round full (click)="getProfilePic(0)">اختيار صورة شخصية</button>
+          <img [src]="captureDataUrl" *ngIf="captureDataUrl" />
+        </ion-item>
+        <!-- <img src="../assets/imgs/elderProfile.png"> -->
+        <button ion-button round full color="light" (click)="saveElderData()"
+          *ngIf="elderly.Religion&&elderly.Address&&elderly.PhoneNumber&&elderly.Age&&elderly.Name&&captureDataUrl">
+          <ion-icon name="md-checkmark-circle"></ion-icon>
+          تسجيل البيانات
+        </button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<!-- 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<ion-content class="bg">
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+      <div class="col-md-4 col-sm4 col-xs-12">
+        
+        <form class="form-container" [formGroup]="validations_form" >
+            <div class="form-group">
+              <label>الاسم</label>
+              <input type="text" class="form-control" formControlName="name" name="name"   [(ngModel)] = "elderly.Name">
+            </div>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.name">
+                  <div class="error-message" *ngIf="validations_form.get('name').hasError(validation.type) && (validations_form.get('name').dirty)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+            </div>
+
+            <div class="form-group">
+              <label>العمر</label>
+              <input type="number" class="form-control" formControlName="age" name="age"  [(ngModel)] = "elderly.Age">
+            </div>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.age">
+                  <div class="error-message" *ngIf="validations_form.get('age').hasError(validation.type) && (validations_form.get('age').dirty)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+              <div class="form-group">
+                <label>رقم الموبايل</label>
+                <input type="tel" class="form-control" formControlName="phoneNo" name="phoneNo" placeholder="0122319003" [(ngModel)] = "elderly.PhoneNumber">
+              </div>
+              <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.phoneNo">
+                    <div class="error-message" *ngIf="validations_form.get('phoneNo').hasError(validation.type) && (validations_form.get('phoneNo').dirty)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+            
+                <div class="form-group">
+                  <label>العنوان</label>
+                  <input type="text" class="form-control" formControlName="address" name="address"  [(ngModel)] = "elderly.Address">
+                </div>
+
+                <ion-list no-lines radio-group [(ngModel)]="elderly.Religion">
+                
+                  <h1 style="color:azure">
+                      الديانة
+                  </h1>
+                  
+                  <ion-item>
+                    <ion-label>مسلم</ion-label>
+                    <ion-radio slot="start" value="مسلم" checked></ion-radio>
+                  </ion-item>
+              
+                  <ion-item>
+                    <ion-label>مسيحي</ion-label>
+                    <ion-radio slot="start" value="مسيحي" checked></ion-radio>
+                  </ion-item>
+
+                </ion-list>
+
+                <div class="form-group">
+                  <button ion-button color="danger" shape="round" fill="outline" (click)="getProfilePic(0)">اختيار صورة شخصية</button>
+                </div>
+                <div class="form-group">
+                  <ion-item>
+                      <img [src]="captureDataUrl" *ngIf="captureDataUrl"/>
+                  </ion-item>
+                </div>
+            <button type="submit"  [disabled]="!validations_form.valid" class="btn btn-success btn-block" (click)= "saveElderData()">تسجيل البيانات</button>
+            <label class="error-message">{{errorMessage}}</label>
+          </form>
+
+      </div>
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+    </div>
+  </div>
+</ion-content> -->

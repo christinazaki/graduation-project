@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons left>
+          <button navPop ion-button icon-only>
+            <ion-icon color="light" name="arrow-back"></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<ion-content class="bg">
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+      <div class="col-md-4 col-sm4 col-xs-12">
+        <!--Form here-->
+        <form class="form-container">
+            <div class="form-group">
+              <label>الايميل الشخصي</label>
+              <input type="email" class="form-control" name="email"   [(ngModel)] = "doctor.email">
+            </div>
+            <div class="form-group">
+              <label>الرقم السري</label>
+              <input type="password" class="form-control" name="pass"  [(ngModel)] = "doctor.Password">
+            </div>
+            
+            <div *ngFor="let item of docList">
+              <button type="submit"  *ngIf = "item.type == 'yup'" class="btn btn-success btn-block" (click)= "Login(doctor)">دخول</button>
+            </div>
+             </form>
+
+      </div>
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+    </div>
+  </div>
+</ion-content>
+

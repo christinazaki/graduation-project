@@ -1,0 +1,22 @@
+page-chatting-room {
+    .toolbar-background {
+        background-image: linear-gradient(135deg, color($colors, dark), color($colors, secondary));
+      }
+      *{
+        color: #ffffff;
+        font-size: 30px;
+    }
+    ion-content{
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-top: 45px;
+        background-color: #1d5063 !important;
+        direction: rtl;
+        .ion-content{
+            background-color:rgba(0,0,0,0.3);
+            border-radius: 35px;
+            color: aliceblue;
+        }
+    }
+    
+}

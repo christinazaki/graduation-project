@@ -1,0 +1,47 @@
+<ion-header>
+        <ion-toolbar>
+            <ion-title>بيانات الشخص التابع له</ion-title>
+            <ion-buttons left>
+                    <button navPop ion-button icon-only>
+                      <ion-icon color="light" name="arrow-back"></ion-icon>
+                    </button>
+                  </ion-buttons>
+       </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    
+    <div class="text1">
+          <p class="note">الأسم : {{(elderData | async)?.Name}}</p>
+    </div>
+    
+    <hr>
+    <div class="text2">
+        <p class="note">العمر :  {{(elderData | async)?.Age}}</p>
+    </div>
+    
+    <hr>
+    <div class="text3">
+        <p class="note">العنوان :  {{(elderData | async)?.Address}}</p> 
+    </div>
+    
+    <hr>
+    <div class="text4">
+        <p class="note">رقم الموبايل :  {{(elderData | async)?.PhoneNumber}}</p>
+    </div>
+    
+    <hr>
+    <div class="text5">
+        <p class="note">الديانة :  {{(elderData | async)?.Religion}}</p>
+    </div>
+    <hr>
+    <div class="text6">
+        <p class="note">رقم التابع الخاص بي :  {{(dependentData | async)?.PhoneNumber}}</p>
+    </div>
+    الحالة:  {{(elderData | async)?.Zahymar}}
+  
+    <button ion-button *ngIf="(elderData | async)?.Zahymar=='نعم لديه'" (click)= "EditElderByDep(ElderID)"> تعديل البيانات</button>
+  
+     </ion-content>
+  
+  

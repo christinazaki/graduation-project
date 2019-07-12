@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+     
+  </ion-toolbar>
+</ion-header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<ion-content style="background-color: #ffd857">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+      <div class="col-md-4 col-sm4 col-xs-12">
+        <!--Form here-->
+        <div>
+            <ion-list no-lines radio-group [(ngModel)]="complaint.descriptionType">
+                      <h1>قم باختيار نوع الشكوي أولا</h1>
+                      <hr>
+                <h3 style="color:black" >
+                    نوع الشكوي
+                </h3>
+            <ion-item style="background-color: teal">
+              <ion-label>من السيستم؟</ion-label>
+              <ion-radio slot="start" value="سيستم" checked></ion-radio>
+            </ion-item>
+          
+            <ion-item style="background-color: teal">
+              <ion-label>من شخص معين؟</ion-label>
+              <ion-radio slot="start" value="اشخاص" checked></ion-radio>
+            </ion-item>
+          </ion-list>
+
+
+            <ion-item>
+                <ion-textarea style="height: 250px;" placeholder="قم بكتابة الشكوي الخاصة بك هنا....."
+                 [(ngModel)] = "complaint.description"></ion-textarea>
+            </ion-item>
+
+        </div>            
+            
+      </div>
+      <div class="col-md-4 col-sm4 col-xs-12"></div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+    <button type="submit" class="btn btn-success btn-block" ion-button
+    (click)= "saveComplain(ElderID)" *ngIf="complaint.descriptionType&&complaint.description">
+            ارسال
+          </button>
+          <button type="submit" class="btn btn-success btn-block" ion-button
+           (click)="back()">للرجوع</button>
+      
+</ion-footer>

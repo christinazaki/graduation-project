@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-toolbar>
+    
+    <ion-title>أضافة تابع لك</ion-title>
+    <ion-buttons left>
+        <button ion-button icon-only (click)="back()">
+          <ion-icon color="light" name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-input type="hidden" [(ngModel)]="name" value="{{(elderData | async)?.Name}}"></ion-input>
+  <ion-item>
+    <ion-label floating>الايميل </ion-label>
+    <ion-input type="email" [(ngModel)]="myDependent.dependent_email"></ion-input><!-- lazem f ay inpute yb2a feh ngModel w hna myproduct de bta3t as class el interface Product ely fl model !-->
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>رقم السري </ion-label>
+    <ion-input type="password" [(ngModel)]="myDependent.Password"></ion-input><!-- lazem f ay inpute yb2a feh ngModel w hna myproduct de bta3t as class el interface Product ely fl model !-->
+    
+  </ion-item>
+  <p style="color: red">قم بوضع الرقم السري 123456 ثابت</p>
+
+
+  <div class="center">
+    <button ion-button outline round icon-start *ngIf="myDependent.dependent_email&&myDependent.Password"
+     (click)="addDependent()">ارسال</button>
+</div>
+
+
+<!--
+  <script src="https://smtpjs.com/v2/smtp.js"></script>
+  <script>
+      $("#SendMessage").on("click",function(){
+
+      Email.send("tutta@gmail.com",
+      "christinemagdy07@gmail.com",
+      "welcome",
+      "this is the body",
+      "smtp.gmail.com",
+      "christinemagdy07@gmail.com",
+      "tutta81097",
+      function done(message) { alert("This area for after mail send.") }
+      );
+
+      });
+  </script>
+  -->
+</ion-content>

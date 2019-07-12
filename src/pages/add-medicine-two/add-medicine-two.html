@@ -1,0 +1,71 @@
+
+
+<ion-header>
+
+    <ion-toolbar>
+        <ion-title>اضافة دواء</ion-title>
+   </ion-toolbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-list>
+    <ion-item>
+      <ion-input placeholder='اسم الدواء' type="text" [(ngModel)]="mymedicine.MedicineName"></ion-input>
+    </ion-item>
+    <ion-input  type="hidden" [(ngModel)]="mymedicine.MedicineDate"   value ={{date}}  id="myDatetime"> </ion-input> 
+    <ion-item>
+      <ion-input placeholder='الكمية المتاحة' type="number"  [(ngModel)]="mymedicine.MedicineQuantity"  min="1" max="1000"  ></ion-input>
+    </ion-item>
+   
+    <ion-row radio-group   [(ngModel)]="mymedicine.MedicineType">
+        
+        <ion-col>
+          <ion-item>
+            <ion-label>برشام</ion-label>
+            <ion-radio   value="1" (ionSelect)="focus(1)"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+           <ion-label>شراب</ion-label>
+            <ion-radio    value="2" (ionSelect) ="focus(2)"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+              <ion-label>حقن</ion-label>
+              <ion-radio value="3" (ionSelect)="focus(3)"
+             ></ion-radio>
+            </ion-item>
+          </ion-col>
+      </ion-row>
+  
+      <ion-item>
+     
+        <ion-input  placeholder='حجم الازازه' type="text"  disabled="{{isDisabled}}" [(ngModel)]="mymedicine.MedicineSize"[(ngModel)]="mymedicine.MedicineSize2"></ion-input>
+      </ion-item>
+    
+    <ion-item>
+        
+            <ion-datetime  placeholder='الوقت' displayFormat="HH:mm" pickerFormat="HH:mm  "  [(ngModel)]="arr_time[0]" ></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-datetime  placeholder='الوقت2' displayFormat="HH:mm" pickerFormat="HH:mm  "  [(ngModel)]="arr_time[1]"  ></ion-datetime>
+          </ion-item>
+         
+          
+        
+        
+      
+       
+      
+    
+   
+    <br>
+      <button ion-button full round (click)="Save()">تسجيل</button>
+  </ion-list>
+  
+  </ion-content>
+  

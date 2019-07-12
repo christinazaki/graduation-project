@@ -1,0 +1,11 @@
+page-edit-elder-profile {
+    .toolbar-background {
+        background-image: linear-gradient(135deg, color($colors, dark), color($colors, darkBlue));
+      }
+    ion-content{
+        direction: rtl;
+    }
+}
+.buttonDone{
+    text-align: center;
+}
